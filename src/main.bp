@@ -1,0 +1,65 @@
+{
+  "positions" : [ {
+    "id" : "/Start",
+    "x" : 1000,
+    "y" : 2876
+  }, {
+    "id" : "/Hello",
+    "x" : 262,
+    "y" : 621
+  }, {
+    "id" : "/CityPattern",
+    "x" : 262,
+    "y" : 1172
+  }, {
+    "id" : "/Text",
+    "x" : 262,
+    "y" : 1731
+  }, {
+    "id" : "/NoMatch",
+    "x" : 262,
+    "y" : 2290
+  }, {
+    "id" : "/reset",
+    "x" : 262,
+    "y" : 2876
+  }, {
+    "id" : "/Hangman/Rules",
+    "x" : 262,
+    "y" : 748
+  }, {
+    "id" : "/Hangman/Start",
+    "x" : 262,
+    "y" : 1426
+  }, {
+    "id" : "/Hangman/Play",
+    "x" : 262,
+    "y" : 2036
+  }, {
+    "id" : "/Hangman",
+    "x" : 427,
+    "y" : -177
+  }, {
+    "id" : "/",
+    "x" : 44,
+    "y" : 13
+  }, {
+    "id" : "/No",
+    "x" : -579,
+    "y" : -102
+  }, {
+    "id" : "/StartGame",
+    "name" : "StartGame",
+    "x" : -406,
+    "y" : 1
+  }, {
+    "id" : "/StartGame",
+    "name" : "StartGame",
+    "x" : -590,
+    "y" : -83
+  }, {
+    "id" : "/Exit",
+    "x" : -177,
+    "y" : -276
+  } ]
+}

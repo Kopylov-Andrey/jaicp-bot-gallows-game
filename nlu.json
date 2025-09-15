@@ -1,7 +1,7 @@
 {
   "project" : {
-    "id" : "just_ai_games_test-256111891-TlU",
-    "name" : "just_ai_games_test-256111891-TlU",
+    "id" : "bot_dlya_igry_viseli-1000239259-SdC",
+    "name" : "bot_dlya_igry_viseli-1000239259-SdC",
     "folder" : "/platform"
   },
   "settings" : {
@@ -43,6 +43,20 @@
     "classificationRules" : {
       "refs" : [ ]
     },
+    "priority" : 0
+  }, {
+    "path" : "/Давай поиграем",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Давай поиграем"
+    }, {
+      "text" : "давай поиграем"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
     "priority" : 0
   } ],
   "entities" : [ ],
