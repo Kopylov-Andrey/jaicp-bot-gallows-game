@@ -134,7 +134,8 @@ theme: /
         
                     // Инициализация сессии
                     $session.hm = { word: word, attempts: 6, opened: [], tried: [], numErrors: 0 };
-                    $session.guess = word[0].toUpperCase() + word.substr(1);
+                    # $session.guess = word[0].toUpperCase() + word.substr(1);
+                    $session.guess = word;
                     
                     $session.numErrors = 0;
                     
@@ -203,7 +204,7 @@ theme: /
                             if (isWin) {
                                 $reactions.answer('Лови подсказку! Эта буква была: "' + hintLetter + '".');
                                 $reactions.answer('Вау! Ты всё слово угадал! Это оно: ' + word + ' 🎉');
-                                 $reactions.transition("/End");
+                                $reactions.transition("/End");
                                 $session.hm = null;
                             } else {
                                 var mask = buildMask(word, $session.hm.opened, hintLetter);
