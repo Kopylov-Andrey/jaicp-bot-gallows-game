@@ -125,23 +125,26 @@ theme: /
                     var i = Math.floor(Math.random() * (list.length || 1));
                     var rec = list[i] || {};
                     var raw = (rec.value.word).toString().trim();
-                    var word = norm(raw);
+                    word = norm(raw);
+                    if($session.test !== undefined){word =$session.test;}
                     $session.len_word = word.length
-                    if (!word) {
-                        word = 'парта'; // Запасной вариант, если в датасете пусто
+                    if (!$session.guess) {
+                        $session.guess = 'парта'; // Запасной вариант, если в датасете пусто
                     }
         
                     // Инициализация сессии
                     $session.hm = { word: word, attempts: 6, opened: [], tried: [], numErrors: 0 };
                     $session.guess = word[0].toUpperCase() + word.substr(1);
+                    
                     $session.numErrors = 0;
-        
+                    
                     // Маска слова
                     var mask = word.split('').map(function () { return '_'; }).join(' ');
                     if (Math.random() > 0.5) {
                         $temp.answer = 'Слово уже в голове! Вот, смотри: \n' + mask + '\n(' + $session.guess + ')';}
                     else {
                         $temp.answer = 'Загадал! Смотри, как выглядит: \n' + mask + '\n(' + $session.guess + ')';}
+                    
                     $reactions.answer($temp.answer);
                     $reactions.answer('Твоя очередь, дружище! Кидай букву или слово целиком.')
                     return;
@@ -226,7 +229,7 @@ theme: /
                                 $reactions.transition("/End");
                             } 
                             else {
-                                $reactions.answer('Еееемаа, легенда! Ты справился 🎉');
+                                $reactions.answer('Еееемаа, легенда! Ты справился 🎉!');
                                 $reactions.answer($session.guess);
                                 $reactions.answer('Хочешь ещё раунд? Просто напиши "Давай поиграем"!');
                                 $session.hm = null; // Очистить сессию
@@ -274,6 +277,7 @@ theme: /
                                     $reactions.answer('Ну это было мощно! Слово угадано, поздравляю ✌️');
                                     $reactions.answer($session.guess);
                                     $reactions.answer('Хочешь ещё раунд? Просто напиши "Давай поиграем"!');
+                                     $session.hm = null; 
                                     $reactions.transition("/End");
                                 } 
                                 
