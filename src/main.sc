@@ -1,3 +1,5 @@
+require: common.js
+
 require: slotfilling/slotFilling.sc
     module = sys.zb-common
   
@@ -7,9 +9,6 @@ require: text/text.sc
 require: common.js
     module = sys.zb-common
     
-# Для игры Назови столицу    
-require: where/where.sc
-    module = sys.zb-common
 
 # Для игры Виселица
 require: hangmanGameData.csv
@@ -98,18 +97,8 @@ theme: /
             script:
                 
                 function norm(s) { return (s || '').toLowerCase().replace(/ё/g, 'е'); }
-                function onlyLetters(s) { return (s || '').toLowerCase().replace(/ё/g, 'е').replace(/[^а-яa-z]+/g, ''); }
-                function buildMask(word, opened, letter) {
-                    var mask = word.split('').map(function (ch) {
-                        var displayChar = opened.indexOf(ch) >= 0 ? ch : '_';
-                        if (letter && ch === letter) {
-                            displayChar = displayChar.toUpperCase();
-                        }
-                        return displayChar;
-                    }).join(' ');
                 
-                    return mask;
-                }
+                
                 
         
                 var qText = $request.query || '';
@@ -320,7 +309,7 @@ theme: /
             # a: Hangman Play CatchAll
             event: noMatch || fromState = "/Hangman/Play", onlyThisState = true
             script:
-                function onlyLetters(s) { return (s || '').toLowerCase().replace(/ё/g, 'е').replace(/[^а-яa-z]+/g, ''); }
+              
                 var query = $request.query.trim().toLowerCase();
                 var list = ['да', 'нет', 'хорошо', 'напомни','давай','нехочу','приступим', 'подсказка', 'какиебуквыяужепробовал']
                 if(query.length == 1 || query.length == $session.len_word ||list.indexOf(onlyLetters(query)) !== -1){return;}
